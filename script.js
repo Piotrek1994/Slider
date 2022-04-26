@@ -12,17 +12,18 @@ const handleCarousel = () => {
 	changeImage()
 }
 
-let startCarousel = setInterval(handleCarousel, carouselSpeed)
+// let startCarousel = setInterval(handleCarousel, carouselSpeed)
 
 const changeImage = () => {
 	if (index > carouselImages.length - 1) {
 		index = 0
-     
 	} else if (index < 0) {
 		index = carouselImages.length - 1
 	}
 
 	sliderBox.style.transform = `translateX(${-index * carouselWidth}px)`
+    disableBtn()
+	console.log(index);
 }
 
 const handleRightArrow = () => {
@@ -35,13 +36,25 @@ const handleLeftArrow = () => {
 	resetInterval()
 }
 
-
-
 const resetInterval = () => {
-    changeImage()
-    clearInterval(startCarousel)
-    startCarousel = setInterval(handleCarousel, carouselSpeed)
+	changeImage()
+	// clearInterval(startCarousel)
+	// startCarousel = setInterval(handleCarousel, carouselSpeed)
 }
+
+
+const disableBtn = () => {
+	if (index === 0) {
+		leftBtn.disabled = true
+	} else if (index === 2) {
+		rightBtn.disabled = true
+	} else {
+		leftBtn.disabled = false
+		rightBtn.disabled = false
+	}
+}
+
+
 
 rightBtn.addEventListener('click', handleRightArrow)
 leftBtn.addEventListener('click', handleLeftArrow)

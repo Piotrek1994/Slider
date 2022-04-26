@@ -63,8 +63,8 @@ body {
 }
 
 .btn-left:disabled {
-	background-color: red;
+	background-color: rgba(83, 83, 83, 0);
 }
 .btn-right:disabled {
-	background-color: red;
+	background-color: rgb(83, 83, 83, 0);
 }
