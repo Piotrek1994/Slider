@@ -61,3 +61,10 @@ body {
 .btn:hover span {
 	transform: scale(0.7);
 }
+
+.btn-left:disabled {
+	background-color: red;
+}
+.btn-right:disabled {
+	background-color: red;
+}
